@@ -10,7 +10,7 @@ app_ui <- function() {
     theme = theme, fillable = TRUE,
     header = shiny::tags$head(shiny::tags$link(rel = "stylesheet", type = "text/css", href = "bioviz-assets/styles.css")),
     bslib::nav_panel("Overview", overview_ui("overview"), icon = shiny::icon("house")),
-    bslib::nav_panel("Differential expression", de_ui("de"), icon = shiny::icon("chart-scatter")),
+    bslib::nav_panel("Differential expression", de_ui("de"), icon = shiny::icon("chart-line")),
     bslib::nav_panel("Longitudinal", timecourse_ui("timecourse"), icon = shiny::icon("wave-square")),
     bslib::nav_panel("Microbiome", microbiome_ui("microbiome"), icon = shiny::icon("bacteria")),
     bslib::nav_panel("Pathways", pathway_ui("pathways"), icon = shiny::icon("circle-nodes")),

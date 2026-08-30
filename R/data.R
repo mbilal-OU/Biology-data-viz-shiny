@@ -30,8 +30,9 @@ load_app_data <- function(data_dir = NULL) {
     microbiome = "microbiome.csv", sequencing_qc = "sequencing_qc.csv",
     pathways = "pathways.csv"
   )
+  missing_files <- files[!file.exists(file.path(data_dir, files))]
+  if (length(missing_files)) stop("Application data files are missing: ", paste(missing_files, collapse = ", "), call. = FALSE)
   result <- lapply(files, function(file) utils::read.csv(file.path(data_dir, file), check.names = FALSE))
   for (name in names(result)) validate_frame(result[[name]], required_schemas[[name]], name)
   result
 }
-

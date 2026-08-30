@@ -31,7 +31,7 @@ jobs:
           extra-packages: any::pkgdown, local::.
           needs: website
       - name: Build pkgdown site
-        run: pkgdown::build_site(dest_dir = "_site", new_process = FALSE, install = FALSE)
+        run: pkgdown::build_site(override = list(destination = "_site"), new_process = FALSE, install = FALSE)
         shell: Rscript {0}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

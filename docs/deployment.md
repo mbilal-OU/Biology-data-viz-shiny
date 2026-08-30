@@ -15,6 +15,20 @@ docker compose up --build
 The application is then available at `http://localhost:3838`. The compose file
 uses a read-only container filesystem with temporary writable mounts.
 
+Verify that the container is serving the application before treating startup as
+successful:
+
+```bash
+curl --fail --silent --show-error http://localhost:3838/ > /dev/null
+```
+
+A zero exit status confirms that the local Shiny endpoint returned a successful
+HTTP response. When finished, stop and remove the local compose resources with:
+
+```bash
+docker compose down
+```
+
 ## Production checklist
 
 - Terminate TLS at a trusted reverse proxy.

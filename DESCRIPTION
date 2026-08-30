@@ -1,0 +1,26 @@
+Package: biovizshiny
+Title: Modular Shiny Applications for Biological Data Exploration
+Version: 1.0.0
+Authors@R: person("Muhammad", "Bilal", role = c("aut", "cre"), email = "mbilal@oakland.edu")
+Description: A tested, modular Shiny application for exploring differential
+    expression, longitudinal response, microbiome composition, pathways, and
+    sequencing quality-control data with explicit reactive contracts.
+License: MIT + file LICENSE
+Encoding: UTF-8
+RoxygenNote: 7.3.3
+Depends: R (>= 4.1)
+Imports:
+    bslib (>= 0.9.0),
+    dplyr (>= 1.1.0),
+    DT,
+    ggplot2 (>= 4.0.0),
+    plotly,
+    scales,
+    shiny (>= 1.14.0)
+Suggests:
+    covr,
+    pkgdown,
+    rcmdcheck,
+    testthat (>= 3.2.0)
+Config/testthat/edition: 3
+

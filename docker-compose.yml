@@ -1,0 +1,11 @@
+services:
+  bioviz-shiny:
+    build: .
+    ports:
+      - "3838:3838"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/log/shiny-server
+

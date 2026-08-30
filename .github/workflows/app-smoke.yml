@@ -1,0 +1,41 @@
+name: App smoke test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  start-and-probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: local::.
+      - name: Start application
+        run: |
+          Rscript -e 'biovizshiny::run_app(host="127.0.0.1", port=3838, launch.browser=FALSE)' > shiny.log 2>&1 &
+          echo $! > shiny.pid
+      - name: Probe HTTP endpoint
+        run: |
+          for attempt in {1..30}; do
+            if curl --fail --silent --show-error http://127.0.0.1:3838/ > /dev/null; then
+              echo "Shiny application is healthy."
+              exit 0
+            fi
+            sleep 2
+          done
+          cat shiny.log
+          exit 1
+      - name: Stop application
+        if: always()
+        run: kill "$(cat shiny.pid)" || true
+

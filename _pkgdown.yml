@@ -1,0 +1,15 @@
+url: https://mbilal-ou.github.io/Biology-data-viz-shiny/
+template:
+  bootstrap: 5
+  light-switch: true
+  bslib:
+    primary: "#256D85"
+navbar:
+  structure:
+    left: [intro, reference, news]
+    right: [search, github]
+  components:
+    github:
+      icon: fab fa-github
+      href: https://github.com/mbilal-OU/Biology-data-viz-shiny
+

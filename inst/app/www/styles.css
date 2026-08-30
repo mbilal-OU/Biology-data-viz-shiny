@@ -1,0 +1,13 @@
+:root {
+  --bio-navy: #153243;
+  --bio-blue: #256d85;
+  --bio-coral: #d95f59;
+}
+
+.navbar-brand { font-weight: 750; letter-spacing: -0.02em; }
+.bslib-value-box .value-box-title { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.78rem; }
+.card { border: 0; box-shadow: 0 8px 24px rgba(21, 50, 67, 0.08); }
+.card-header { color: var(--bio-navy); font-weight: 700; background: white; }
+.sidebar { border-right: 1px solid #e2e8f0; }
+.btn-primary { font-weight: 650; }
+

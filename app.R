@@ -1,0 +1,2 @@
+biovizshiny::run_app()
+

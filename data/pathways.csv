@@ -1,0 +1,10 @@
+pathway,category,gene_ratio,adjusted_p_value,hits
+Interferon response,Immune signaling,0.1711,0.0332718,18
+Cytokine signaling,Immune signaling,0.348,3.79e-05,18
+T-cell activation,Immune signaling,0.2584,6.89e-05,14
+Glycolysis,Metabolism,0.2655,0.0038478,9
+Fatty-acid oxidation,Metabolism,0.1995,1.17e-05,10
+Amino-acid metabolism,Metabolism,0.3851,0.0032919,16
+Oxidative stress,Cellular stress,0.239,0.0002321,12
+DNA repair,Cellular stress,0.3638,1.59e-05,26
+Unfolded protein response,Cellular stress,0.3443,1.35e-05,12

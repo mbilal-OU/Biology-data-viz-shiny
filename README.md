@@ -93,7 +93,7 @@ and log errors without logging sensitive biological data.
 ## Portfolio series
 
 - [Seaborn](https://github.com/mbilal-OU/biology-data-viz-seaborn) · [Matplotlib](https://github.com/mbilal-OU/biology-data-viz-matplotlib) · [Plotly](https://github.com/mbilal-OU/Biology-data-viz-plotly)
-- [ggplot2](https://github.com/mbilal-OU/Biology-data-viz-ggplot2) · [ggtree + ComplexHeatmap](https://github.com/mbilal-OU/Biology-data-viz-ggtree-complexheatmap) · **Shiny**
+- [ggplot2](https://github.com/mbilal-OU/Biology-data-viz-ggplot2) · [ggtree + ComplexHeatmap](https://github.com/mbilal-OU/Biology-data-viz-ggtree-complexheatmap) · **Shiny** · [Gnuplot](https://github.com/mbilal-OU/biology-data-viz-gnuplot)
 
 Citation metadata are in [`CITATION.cff`](CITATION.cff). Code is under the [MIT License](LICENSE.md).
 

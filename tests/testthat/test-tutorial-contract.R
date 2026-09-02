@@ -9,8 +9,12 @@ figures <- c(
 )
 
 test_that("every documented app figure links to a complete tutorial", {
-  readme <- paste(readLines("README.md", warn = FALSE), collapse = "\n")
-  guide <- paste(readLines("docs/figure-tutorials.md", warn = FALSE), collapse = "\n")
+  root <- Sys.getenv("GITHUB_WORKSPACE", unset = getwd())
+  readme_path <- file.path(root, "README.md")
+  guide_path <- file.path(root, "docs", "figure-tutorials.md")
+  skip_if_not(file.exists(readme_path) && file.exists(guide_path), "source documentation is unavailable")
+  readme <- paste(readLines(readme_path, warn = FALSE), collapse = "\n")
+  guide <- paste(readLines(guide_path, warn = FALSE), collapse = "\n")
 
   for (figure in figures) {
     expect_true(grepl(

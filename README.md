@@ -1,31 +1,31 @@
-# BioViz Shiny Lab
+# Reactive Omics Explorer with Shiny
 
-[![R-CMD-check](https://github.com/mbilal-OU/Biology-data-viz-shiny/actions/workflows/ci.yml/badge.svg)](https://github.com/mbilal-OU/Biology-data-viz-shiny/actions/workflows/ci.yml)
-[![App smoke test](https://github.com/mbilal-OU/Biology-data-viz-shiny/actions/workflows/app-smoke.yml/badge.svg)](https://github.com/mbilal-OU/Biology-data-viz-shiny/actions/workflows/app-smoke.yml)
-[![Docs](https://github.com/mbilal-OU/Biology-data-viz-shiny/actions/workflows/docs.yml/badge.svg)](https://github.com/mbilal-OU/Biology-data-viz-shiny/actions/workflows/docs.yml)
+[![R-CMD-check](https://github.com/mbilal-OU/shiny-omics-explorer/actions/workflows/ci.yml/badge.svg)](https://github.com/mbilal-OU/shiny-omics-explorer/actions/workflows/ci.yml)
+[![App smoke test](https://github.com/mbilal-OU/shiny-omics-explorer/actions/workflows/app-smoke.yml/badge.svg)](https://github.com/mbilal-OU/shiny-omics-explorer/actions/workflows/app-smoke.yml)
+[![Docs](https://github.com/mbilal-OU/shiny-omics-explorer/actions/workflows/docs.yml/badge.svg)](https://github.com/mbilal-OU/shiny-omics-explorer/actions/workflows/docs.yml)
 [![Shiny](https://img.shields.io/badge/Shiny-1.14%2B-1F77B4)](https://shiny.posit.co/r/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-2E7D32)](LICENSE.md)
 
 A **production-minded, modular Shiny portfolio for biological data
-exploration**. It demonstrates reactive contracts, namespaced modules,
-interactive graphics, responsive Bootstrap 5 layout, downloads, validation,
-server-side tests, startup smoke testing, container deployment, and explicit
-scientific safeguards.
+exploration**. Its distinctive role is reactive analysis delivery: namespaced
+modules keep controls, transformations, plots, tables, and downloads
+synchronized, with validated inputs, server-side tests, startup smoke testing,
+responsive layout, and container deployment.
 
 The bundled data are deterministic simulations. The application is an
-exploration and teaching tool—not clinical software or a confirmatory analysis.
+exploration and teaching tool, not clinical software or a confirmatory analysis.
 
 ## Interface tour
 
 | Application surface | Application surface |
 |---|---|
-| **Overview and data contracts**<br>![Overview dashboard](figures/01_overview.png)<br>At-a-glance scope, record counts, and interpretation boundaries. | **Differential expression**<br>![Differential expression module](figures/02_differential_expression.png)<br>Reactive FDR/effect thresholds, hover identifiers, table, and download. |
-| **Longitudinal response**<br>![Longitudinal module](figures/03_longitudinal.png)<br>Condition selection and optional subject trajectories preserve study design. | **Microbiome composition**<br>![Microbiome module](figures/04_microbiome.png)<br>Reactive cohort and top-taxon controls with within-sample normalization. |
-| **Pathway enrichment**<br>![Pathway module](figures/05_pathways.png)<br>Category and adjusted-evidence filters update plot and table together. | **Sequencing quality control**<br>![QC module](figures/06_sequencing_qc.png)<br>User-set QC thresholds flag libraries consistently across plot and table. |
+| [**Overview and data contracts**](docs/figure-tutorials.md#01-overview-and-data-contracts)<br>[![Overview dashboard](figures/01_overview.png)](docs/figure-tutorials.md#01-overview-and-data-contracts)<br>At-a-glance scope, record counts, and interpretation boundaries. | [**Differential expression**](docs/figure-tutorials.md#02-differential-expression-module)<br>[![Differential expression module](figures/02_differential_expression.png)](docs/figure-tutorials.md#02-differential-expression-module)<br>Reactive FDR/effect thresholds, hover identifiers, table, and download. |
+| [**Longitudinal response**](docs/figure-tutorials.md#03-longitudinal-response-module)<br>[![Longitudinal module](figures/03_longitudinal.png)](docs/figure-tutorials.md#03-longitudinal-response-module)<br>Condition selection and optional subject trajectories preserve study design. | [**Microbiome composition**](docs/figure-tutorials.md#04-microbiome-composition-module)<br>[![Microbiome module](figures/04_microbiome.png)](docs/figure-tutorials.md#04-microbiome-composition-module)<br>Reactive cohort and top-taxon controls with within-sample normalization. |
+| [**Pathway enrichment**](docs/figure-tutorials.md#05-pathway-enrichment-module)<br>[![Pathway module](figures/05_pathways.png)](docs/figure-tutorials.md#05-pathway-enrichment-module)<br>Category and adjusted-evidence filters update plot and table together. | [**Sequencing quality control**](docs/figure-tutorials.md#06-sequencing-quality-control-module)<br>[![QC module](figures/06_sequencing_qc.png)](docs/figure-tutorials.md#06-sequencing-quality-control-module)<br>User-set QC thresholds flag libraries consistently across plot and table. |
 
 ## Architecture
 
-![Reactive application architecture](figures/application_architecture.svg)
+[![Reactive application architecture](figures/application_architecture.svg)](docs/figure-tutorials.md#application-architecture)
 
 Each module owns its input namespace, reactive transformation, output renderers,
 and tests. Shared data loading validates schemas once; modules enforce
@@ -35,15 +35,15 @@ analysis-specific state without using global mutable variables.
 
 ```r
 install.packages(c("remotes", "shiny"))
-remotes::install_github("mbilal-OU/Biology-data-viz-shiny")
+remotes::install_github("mbilal-OU/shiny-omics-explorer")
 biovizshiny::run_app(launch.browser = TRUE)
 ```
 
 For repository development:
 
 ```bash
-git clone https://github.com/mbilal-OU/Biology-data-viz-shiny.git
-cd Biology-data-viz-shiny
+git clone https://github.com/mbilal-OU/shiny-omics-explorer.git
+cd shiny-omics-explorer
 Rscript -e 'install.packages("pak"); pak::local_install_dev_deps()'
 Rscript -e 'testthat::test_local()'
 Rscript -e 'biovizshiny::run_app(host="0.0.0.0", port=3838)'
@@ -92,8 +92,7 @@ and log errors without logging sensitive biological data.
 
 ## Portfolio series
 
-- [Seaborn](https://github.com/mbilal-OU/biology-data-viz-seaborn) · [Matplotlib](https://github.com/mbilal-OU/biology-data-viz-matplotlib) · [Plotly](https://github.com/mbilal-OU/Biology-data-viz-plotly)
-- [ggplot2](https://github.com/mbilal-OU/Biology-data-viz-ggplot2) · [ggtree + ComplexHeatmap](https://github.com/mbilal-OU/Biology-data-viz-ggtree-complexheatmap) · **Shiny** · [Gnuplot](https://github.com/mbilal-OU/biology-data-viz-gnuplot)
+- [Seaborn](https://github.com/mbilal-OU/seaborn-biological-statistics) · [Matplotlib](https://github.com/mbilal-OU/matplotlib-genomic-figures) · [Plotly](https://github.com/mbilal-OU/plotly-interactive-omics)
+- [ggplot2](https://github.com/mbilal-OU/ggplot2-omics-grammar) · [ggtree + ComplexHeatmap](https://github.com/mbilal-OU/ggtree-complexheatmap-phylogenomics) · **Shiny** · [Gnuplot](https://github.com/mbilal-OU/gnuplot-bioinformatics-cli)
 
 Citation metadata are in [`CITATION.cff`](CITATION.cff). Code is under the [MIT License](LICENSE.md).
-

@@ -16,7 +16,7 @@ app_ui <- function() {
     bslib::nav_panel("Pathways", pathway_ui("pathways"), icon = shiny::icon("circle-nodes")),
     bslib::nav_panel("Sequencing QC", qc_ui("qc"), icon = shiny::icon("check-double")),
     bslib::nav_spacer(),
-    bslib::nav_item(shiny::tags$a("Source", href = "https://github.com/mbilal-OU/Biology-data-viz-shiny", target = "_blank"))
+    bslib::nav_item(shiny::tags$a("Source", href = "https://github.com/mbilal-OU/shiny-omics-explorer", target = "_blank"))
   )
 }
 

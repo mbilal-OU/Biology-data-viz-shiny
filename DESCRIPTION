@@ -1,10 +1,10 @@
 Package: biovizshiny
-Title: Modular Shiny Applications for Biological Data Exploration
+Title: Reactive Omics Explorer with Shiny
 Version: 1.0.0
 Authors@R: person("Muhammad", "Bilal", role = c("aut", "cre"), email = "mbilal@oakland.edu")
-Description: A tested, modular Shiny application for exploring differential
-    expression, longitudinal response, microbiome composition, pathways, and
-    sequencing quality-control data with explicit reactive contracts.
+Description: A tested, modular Shiny application for reactive exploration of
+    differential expression, longitudinal response, microbiome composition,
+    pathways, and sequencing quality-control data with explicit contracts.
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.3.3
@@ -23,4 +23,3 @@ Suggests:
     rcmdcheck,
     testthat (>= 3.2.0)
 Config/testthat/edition: 3
-

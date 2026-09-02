@@ -1,4 +1,4 @@
-url: https://mbilal-ou.github.io/Biology-data-viz-shiny/
+url: https://mbilal-ou.github.io/shiny-omics-explorer/
 template:
   bootstrap: 5
   light-switch: true
@@ -6,10 +6,12 @@ template:
     primary: "#256D85"
 navbar:
   structure:
-    left: [intro, reference, news]
+    left: [intro, tutorials, reference, news]
     right: [search, github]
   components:
+    tutorials:
+      text: Figure tutorials
+      href: https://github.com/mbilal-OU/shiny-omics-explorer/blob/main/docs/figure-tutorials.md
     github:
       icon: fab fa-github
-      href: https://github.com/mbilal-OU/Biology-data-viz-shiny
-
+      href: https://github.com/mbilal-OU/shiny-omics-explorer
